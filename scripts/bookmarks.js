@@ -300,8 +300,8 @@ function setBookmarkFavicon(faviconElement, pageUrl) {
     };
 
     // Try browser-specific favicon first (Chromium only)
-    if (!isFirefox || !isOpera) {
-        faviconElement.src = `chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(pageUrl)}&size=32`;
+    if (isChromiumBased && !isOpera && window.chrome?.runtime?.id) {
+        faviconElement.src = `chrome-extension://${window.chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(pageUrl)}&size=32`;
         faviconElement.onerror = googleFallback;
     } else {
         googleFallback();

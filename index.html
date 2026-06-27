@@ -37,7 +37,8 @@
     <script defer src="scripts/script.js"></script>
     <script defer src="scripts/search-suggestions.js"></script>
     <script defer src="scripts/ai-tools.js"></script>
-    <script defer src="scripts/bookmarks.js"></script>
+    <!-- bookmarks.js disabled in local file:// mode (requires chrome.bookmarks API) -->
+    <!-- <script defer src="scripts/bookmarks.js"></script> -->
     <script defer src="scripts/todo-list.js"></script>
     <script defer src="scripts/google-apps.js"></script>
     <script defer src="scripts/voice-search.js"></script>
@@ -116,77 +117,7 @@
         </svg>
     </div>
 
-    <div class="bookmark-button" id="bookmarkButton">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-                d="M7 2a3 3 0 0 0-3 3v15.138a1.5 1.5 0 0 0 2.244 1.303l5.26-3.006a1 1 0 0 1 .992 0l5.26 3.006A1.5 1.5 0 0 0 20 20.138V5a3 3 0 0 0-3-3z"
-                clip-rule="evenodd" />
-        </svg>
-        <!-- Text to appear on hover -->
-        <span class="tooltip-text" id="bookmarksHover">Bookmarks</span>
-    </div>
-    <div id="bookmarksContainer">
-        <div id="bookmarkSidebar" class="bookmark-sidebar">
-
-            <div class="topOutRoundCorner">
-                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <path class="lessDark" d="M30 0L0 0C16.5685 0 30 13.4315 30 30L30 0Z" />
-                </svg>
-            </div>
-
-            <div class="bookmark-sidebar-header">
-                <h2 id="bookmarksHeading">Bookmarks</h2>
-            </div>
-            <div class="bookmark-search-container">
-                <input type="text" id="bookmarkSearch" placeholder="Search bookmark" />
-                <button id="clearSearchButton">✖</button>
-            </div>
-            <!-- Adding Sorting buttons along with View Container -->
-            <div class="bookmark-controls-container">
-                <div class="bookmark-control-group">
-                    <h3 id="bookmarkSortBy">Sort by</h3>
-                    <div class="button-group">
-                        <button id="sortAlphabetical" class="bookmark-sort-button active">A-Z</button>
-                        <button id="sortTimeAdded" class="bookmark-sort-button">Old-New</button>
-                    </div>
-                </div>
-
-                <div class="bookmark-control-group">
-                    <h3 id="bookmarkViewAs">View as</h3>
-                    <div class="button-group">
-                        <input type="checkbox" id="bookmarkGridCheckbox" hidden />
-                        <button id="bookmarkViewGrid" class="bookmark-view-as-button">Grid</button>
-                        <button id="bookmarkViewList" class="bookmark-view-as-button">List</button>
-                    </div>
-                </div>
-            </div>
-            <ul id="bookmarkList"></ul>
-        </div>
-    </div>
-
-    <!-- Edit Bookmark Modal -->
-    <div id="editBookmarkModal">
-        <div class="modal-content">
-            <h2 id="editBookmarkHeading">Edit Bookmark</h2>
-
-            <img id="editBookmarkFavicon" src="" alt="Favicon">
-
-            <div class="floating-label-field">
-                <input type="text" id="editBookmarkName" autocomplete="off" />
-                <label for="editBookmarkName" id="editBookmarkNameLabel">Bookmark Name</label>
-            </div>
-
-            <div class="floating-label-field">
-                <input type="url" id="editBookmarkURL" autocomplete="off" />
-                <label for="editBookmarkURL" id="editBookmarkURLLabel">Bookmark URL</label>
-            </div>
-
-            <div class="modal-buttons">
-                <button id="saveBookmarkChanges">Save</button>
-                <button id="cancelBookmarkEdit">Cancel</button>
-            </div>
-        </div>
-    </div>
+    <!-- ═══ Bookmark System (disabled in local file:// mode — requires chrome.bookmarks API) ═══ -->
 
     <!----------------------- End of Bookmark System ----------------------->
 
@@ -1303,7 +1234,8 @@
                                 </div>
 
                                 <div class="sectionInner">
-                                    <div class="ttcont">
+                                    <!-- Bookmarks toggle disabled in local file:// mode -->
+                                    <div class="ttcont" style="display:none;">
                                         <div class="texts">
                                             <div class="bigText" id="bookmarksText">Bookmarks</div>
                                             <div class="infoText" id="bookmarksInfo">Show bookmarks sidebar</div>
@@ -1503,7 +1435,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="ttcont" id="searchSuggestionsHeader">
+                                    <!-- Search Suggestions toggle + Proxy settings disabled in local file:// mode (CORS bypass via Tampermonkey GM_xmlhttpRequest instead) -->
+                                    <div class="ttcont" id="searchSuggestionsHeader" style="display:none;">
                                         <div class="texts">
                                             <div class="bigText" id="search_suggestions_button">Search Suggestions</div>
                                             <div class="infoText" id="search_suggestions_text">Enable search suggestions
@@ -1515,7 +1448,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="proxyOptions">
+                                    <div class="proxyOptions" style="display:none;">
                                         <div class="ttcont" id="proxybypassField">
                                             <div class="texts">
                                                 <div class="bigText" id="useproxytitletext">Proxy Bypass</div>
