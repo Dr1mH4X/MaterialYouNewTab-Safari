@@ -8,7 +8,11 @@ MYNT: Material You New Tab
 </h1>
 <div align="center">
 
-此分支用于本地浏览（非浏览器扩展）。MYNT: Material You New Tab is a versatile browser extension that personalizes your New Tab page with customizable themes, a welcoming message, and various handy tools, all while integrating seamlessly with your preferred search engine.
+<blockquote>
+  This branch is for local browsing (not a browser extension).
+</blockquote>
+
+MYNT: Material You New Tab is a versatile browser extension that personalizes your New Tab page with customizable themes, a welcoming message, and various handy tools, all while integrating seamlessly with your preferred search engine.
 
 </div>
 
